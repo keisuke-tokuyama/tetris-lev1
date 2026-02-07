@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Gravity Flip Tetris Prototype</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        background: #000;
+        color: #fff;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        height: 100vh;
+      }
+
+      h1 {
+        font-size: 20px;
+        margin: 8px 0 4px;
+      }
+
+      #game-container {
+        margin-top: 8px;
+        display: flex;
+        flex-direction: row;
+        gap: 16px;
+        align-items: flex-start;
+      }
+
+      canvas {
+        background: #111;
+        border: 1px solid #555;
+      }
+
+      #side-panel {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        min-width: 140px;
+      }
+
+      #info {
+        font-size: 12px;
+        line-height: 1.6;
+        white-space: pre-line;
+      }
+
+      #status {
+        font-size: 16px;
+        font-weight: bold;
+        text-align: right;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>重力反転テトリス（プロトタイプ）</h1>
+    <div id="game-container">
+      <canvas id="game" width="200" height="400"></canvas>
+      <div id="side-panel">
+        <div id="status"></div>
+        <div id="info">
+          操作:
+          - ← → : 左右移動（画面基準）
+          - 下向き重力時:
+            - ↑ : 回転（時計回り）
+            - ↓ : ソフトドロップ
+          - 上向き重力時:
+            - ↓ : 回転（反時計回り）
+            - ↑ : ソフトドロップ（上方向への高速移動）
+          - Space : 常にハードドロップ（どちらの重力方向でも即着地）
+
+          ルール:
+          - 各テトロミノがロックされるたびに重力方向が
+            「下 ↔ 上」と完全交互に反転します。
+          - 次のブロックをスポーン位置に配置できない場合はゲームオーバーです。
+
+          ※ 演出・スコア等は省略した最小プロトタイプです。
+        </div>
+      </div>
+    </div>
+
+    <script src="main.js"></script>
+  </body>
+</html>
+

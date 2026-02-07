@@ -1,0 +1,18 @@
+{
+  "name": "gravity-flip-tetris-prototype",
+  "version": "1.0.0",
+  "description": "最小構成の重力反転テトリス（ブラウザ用、依存ライブラリなし）",
+  "private": true,
+  "scripts": {
+    "start": "npx serve ."
+  },
+  "keywords": [
+    "tetris",
+    "prototype",
+    "gravity"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {}
+}
+
